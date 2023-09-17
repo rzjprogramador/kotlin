@@ -1,0 +1,8 @@
+comandos:
+  a_cada_diretorio_antes_de_comando_usar_logico: &&
+
+variaveis_vscode:
+  diretorio: $dir
+  nome_do_Arquivo_puxando_a_extensao: $fileName
+  nome_do_Arquivo_INDICANDO_a_extensao: $fileNameWithoutExt.EXTENSAO
+  pasta_aberta: $workspaceRoot: O caminho da pasta aberta no VS Code

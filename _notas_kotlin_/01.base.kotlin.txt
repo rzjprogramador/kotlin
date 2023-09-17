@@ -1,0 +1,56 @@
+# by PGM
+valor: valor pode ser: [ representacoes de tiposPrimitivos, object, function, ]
+
+---
+# by Kotlin:
+projeto:
+extensao_oficial: .kt
+extensao_arquivo_compilado: .class
+ver_versao: kotlinc -version
+compilar_e_rodar_arquivo: <ESTANDO NO LOCAL DO ARQUIVO ALVO> :: ```kotlinc ARQUIVO.kt -include-runtime -d ARQUIVO.jar && java -jar ARQUIVO.jar```
+site code_runner: https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner
+  code_runner: configurado apartir do script do kotlin roda e compila arquivo em uso com o botão e F4 :
+  "kotlin": "cd $dir && kotlinc $fileName -include-runtime -d $fileNameWithoutExt.jar && java -jar $fileNameWithoutExt.jar"
+
+atalho_rodar_arquivo: F5 obs: somente com coderunner no vscode.
+
+nomenclaturas:
+  nome_arquivo: PascalCase.kt
+
+implementacoes:
+
+construtorPrimario: é entre parenteses após o nome da classe.
+sobrecarga_de_construtorPrimario: bloco init {} : é o corpo do construtorPrimario, vai executar o que está nele assim que o objeto for instanciado.
+aplicabilidade: se necessario posso fazer algo com os atributos antes de inicia-los, mas é preferivel fazer isto com os metodos get e set
+
+criar_atributo_e_param_ao_mesmo_tempo: declare de forma imutavel as variaveis no construtorPrimario, keyword: val.
+
+controle_sobreescrita_atributos
+acessar_atributo_dentro_da_classe: não preciso do .this quando é pra usar como variavel acesso direto com o nome do atributo quando é pra interpolar uso dentro da string o $cifraoNomeDaVariavel dentro de aspas duplas, se é expresssaofazzer um wrapper envolvendo entre chaves { $variavel1 operacao $variavel2}.
+
+# valor
+mutavel_permitir_escrita_e_leitura: var (seria o mesmo que public), mutavel pode passar valor depois,
+  dica_code: por ser mutavel <var> ele ja fornece o set () na compilacao para java, ai é só usar fora da classe atribuindo, utilizar o corpo com BACKING_FIELD só se precisar fazer logica para setar
+
+imutavel_permitir_somente_leitura: val (seria o mesmo que private uam constante.), imutavel no memoneto que cria tem que passar o valor e ela não muda mais.
+    gerar_valor_computavel: posso gerar o valor atribuindo a propriedade, ou  com o metodo get() = valor :: identado logo abaixo do atributo (seria o meu getter), obs: com o metodo get() o kotlin ja faz o getter direto no atributo.
+    detalhe: só fazer get se realmente precisar.
+    aplicabilidade: utilizar o get para computar campos, e ser for a regraDeNegocio passivel de regra logica de acesso ao campo fora nas instancias.
+
+    gerar_valor_com_setter: abaixo do novo atributo inserir Identado um metodo set com BACKING_FIELD ou seja set ( recebe value) e faz sem return um field = value que recebeu ,
+    detalhe: as variaveis tem que ter estes nomes value para param do set e value para receber o value, o que podemos personalizar é o tipoPersonalizavel da var que receberá o set inserido abaixo do atributo.
+
+    dica_code: por ser mutavel <var> ele ja fornece o set só usar fora da classe atribuindo, utilizar o corpo com BACKING_FIELD só se precisar fazer logica para setar.
+
+    aplicabilidade: setar um valor vindo de fora passivel de logica para inserção.
+
+expressao: expressao é valor em kotlin
+expressao_condicional_ternario: expressao_condicional_ternario é valor em kotlin
+
+# Recursos da linguagem : Kotlin
+tipo_de_aspas_para_strings: duplas
+obrigatorio_ponto_evirgula_apos_para_finalizar_linha: não
+se_corpo_metodo_tem_apenas_uma_linha_pode_omitir_chaves_e_return: sim
+posso_ter_mais_que_uma_funcao_main_no_mesmo_arquivo: não
+posso_ter_mais_que_uma_funcao_main_em_toda_app: sim
+
