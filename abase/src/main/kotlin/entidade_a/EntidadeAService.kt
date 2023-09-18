@@ -1,23 +1,18 @@
-package a_classe
+package entidade_a
 
-import value_object.Nome
-import value_object.TextNomeClass
-
-class AClasse(paramSet1: String, argtextSet2: String) {
-    private var textoSet1: String = Nome.perform(paramSet1)
-    private var textoSet2: String = TextNomeClass.perform(argtextSet2)
-
-    private val computTexto1Texto2 = "$paramSet1 $argtextSet2"
+class EntidadeAService(args: EntidadeAArgs) {
+    private var argsA: EntidadeAArgs = args
+    private val computTexto1Texto2 = "${args.nome} ${args.sobrenome}"
 
     fun status () {
-        println("textoSet1 : $textoSet1")
-        println("textoSet2 : $textoSet2")
+        println(message = "nome : ${argsA.nome}")
+        println(message = "sobrenome : ${argsA.sobrenome}")
         println("comput_Texto1Texto2 : $computTexto1Texto2")
     }
 }
 fun main () {
-    val aclasse = AClasse("vcc","s" )
-//        println(aclasse)
+    val argsRequest = EntidadeAArgs("reinaldo", "zachars")
+    val aclasse = EntidadeAService(argsRequest)
 
     aclasse.status()
 }

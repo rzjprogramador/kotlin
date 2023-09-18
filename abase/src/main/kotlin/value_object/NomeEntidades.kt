@@ -1,6 +1,6 @@
 package value_object
 
-class TextNomeClass () {
+class NomeEntidades () {
 
     companion object {
         fun perform(v: String): String {
