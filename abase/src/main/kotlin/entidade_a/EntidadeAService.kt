@@ -17,7 +17,7 @@ class AClasse(paramSet1: String, argtextSet2: String) {
 }
 fun main () {
     val aclasse = AClasse("vcc","s" )
-    // println(aclasse)
+//        println(aclasse)
 
     aclasse.status()
 }
