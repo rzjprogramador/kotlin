@@ -11,8 +11,8 @@ class EntidadeAService(args: EntidadeAArgs) {
     }
 }
 fun main () {
-    val argsRequest = EntidadeAArgs("reinaldo", "zachars")
-    val aclasse = EntidadeAService(argsRequest)
+    val newArgsRequest1 = EntidadeAArgs("reinaldo", "zachars")
+    val aclasse = EntidadeAService(newArgsRequest1)
 
     aclasse.status()
 }
